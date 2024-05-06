@@ -1,0 +1,47 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+        <div class="row col-8 offset-3">
+        <form method="post" action="/listings/edit/<%=editList._id%>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="mb-2">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" required value="<%=editList.title%>">
+            <div class="invalid-feedback">Title is required</div>
+            </div>
+            <div class="mb-2">
+            <label for="description" class="form-label">Description</label>
+            <textarea type="text" name="description" class="form-control" required> <%=editList.description%></textarea>
+            <div class="invalid-feedback">Enter a short Description</div>
+            </div>
+            <div class="row">
+            <div class="mb-2 col-md-4">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="location" class="form-control" required value="<%=editList.location%>">
+            <div class="invalid-feedback">Enter a valid Location</div>
+           </div>
+            <div class="mb-2 col-md-8">
+            <label for="Country" class="form-label">Country</label>
+            <input type="text" name="country" class="form-control" value="<%=editList.country%>" required>
+            <div class="invalid-feedback">Enter a valid Country name</div>
+            </div>
+          </div>
+            <div class="mb-2">
+            <label for="price" class="form-label">Price</label>
+            <span>&#8377;</span><input type="number" name="price" class="form-control" required value="<%=editList.price%>">
+            <div class="invalid-feedback">Enter a valid Price</div>
+            </div>
+            Original Image
+            <div class=" row mb-2">
+            <img src="<%=originalUrl%>" class="col-5" > 
+            </div>
+            <div class="mb-2">
+            <label for="image" class="form-label">Upload New Image</label>
+            <input type="file" name="image" class="form-control" >
+            <div class="invalid-feedback">Enter a valid image URL</div>
+            </div>
+            <br>
+            <button type="submit" class="btn ad-btn">Submit</button>
+            <br>
+            
+        </form>
+        </div>
+</body>

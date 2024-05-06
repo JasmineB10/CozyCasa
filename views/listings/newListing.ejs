@@ -1,0 +1,42 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+    <div class="row col-8 offset-2">
+            <h3>Create A New Listing</h3>
+    <form method="post" novalidate class="needs-validation" action="/listings" enctype="multipart/form-data">
+        <div class="mb-2">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" placeholder="Enter title" class="form-control" required>
+        <div class="valid-feedback">Title looks good!</div>
+       </div>
+       <div class="mb-2">
+        <label for="description" class="form-label">Description</label>
+        <textarea type="text" name="description" class="form-control" required></textarea>
+        <div class="invalid-feedback">Enter a short description</div>
+    </div>
+    <div class="row">
+        <div class="mb-2 col-md-4">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="location" placeholder="Enter location" class="form-control" required>
+            <div class="invalid-feedback">Enter a valid location</div>
+        </div>
+        <div class="mb-2 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="country" placeholder="Enter country" class="form-control" required>
+            <div class="invalid-feedback">Enter a valid country</div>
+        </div>
+    </div>
+    
+    <div class="mb-2">
+        <label for="price" class="form-label">Price</label>
+        <span>&#8377;</span><input type="number" name="price" placeholder="Enter price" class="form-control" required>
+        <div class="invalid-feedback">Enter a valid price</div>
+    </div>
+    <div class="mb-2">
+        <label for="image" class="form-label">Upload Image</label>
+        <input type="file" name="image" class="form-control" required>
+    </div>
+        <button type="submit" class="btn ad-btn">Submit</button>
+        <br><br>
+    </form>
+</div>
+</body>
